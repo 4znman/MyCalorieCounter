@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Calorie Counter</title>
-</head>
-<body>
-    
-    <h1>Count your Calories</h1>
-    <div class = "container">
-        
-        <form id = "calorie-counter">
-            <label for = "budget">Daily calorie Budget</label>
-            <input
+  </head>
+  <body>
+    <main>
+      <h1>Calorie Counter</h1>
+      <div class="container">
+        <form id="calorie-counter">
+          <label for="budget">Calorie Budget</label>
+          <input
             type="number"
             min="0"
             id="budget"
             placeholder="Daily calorie budget"
             required
           />
+          <br>
+          <label for="budgetProtein">Protein Quota</label>
+          <input
+            type="number"
+            min="0"
+            id="budgetProtein"
+            placeholder="Protein Quota"
+            required
+          />
           <fieldset id="breakfast">
             <legend>Breakfast</legend>
             <div class="input-container"></div>
-          </fieldset>
+            
+          
           <fieldset id="lunch">
             <legend>Lunch</legend>
             <div class="input-container"></div>
@@ -61,7 +70,8 @@
           </div>
         </form>
         <div id="output" class="output hide"></div>
-    </div>
+      </div>
+    </main>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
