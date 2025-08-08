@@ -35,7 +35,7 @@ function addEntry() {
   
   `
 
-  const HTMLString2 =`
+  const HTMLString2 = `
   <label for="${entryDropdown.value}-${entryNumber}-protein"> Protein</label>
   <input
     class="protein"
@@ -53,11 +53,11 @@ function calculateCalories(e) {
   e.preventDefault();
   isError = false;
 
-const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type='number']:not(.protein)");
-const lunchNumberInputs = document.querySelectorAll("#lunch input[type='number']:not(.protein)");
-const dinnerNumberInputs = document.querySelectorAll("#dinner input[type='number']:not(.protein)");
-const snacksNumberInputs = document.querySelectorAll("#snacks input[type='number']:not(.protein)");
-const exerciseNumberInputs = document.querySelectorAll("#exercise input[type='number']");
+  const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type='number']:not(.protein)");
+  const lunchNumberInputs = document.querySelectorAll("#lunch input[type='number']:not(.protein)");
+  const dinnerNumberInputs = document.querySelectorAll("#dinner input[type='number']:not(.protein)");
+  const snacksNumberInputs = document.querySelectorAll("#snacks input[type='number']:not(.protein)");
+  const exerciseNumberInputs = document.querySelectorAll("#exercise input[type='number']");
 
   const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
   const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
@@ -90,9 +90,9 @@ const exerciseNumberInputs = document.querySelectorAll("#exercise input[type='nu
   const consumedProtein = breakfastP + lunchP + dinnerP + snacksP;
   const remainingProtein = budgetP - consumedProtein;
 
-  const proteinStatus = remainingProtein < 0 ? 'Deficit' : 'Surplus';
+  const proteinStatus = remainingProtein < 0 ? 'Surplus' : 'Deficit';
 
-output.innerHTML = `
+  output.innerHTML = `
   <span class="${calorieStatus.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${calorieStatus}</span>
   <hr>
   <p>${budgetCalories} Calories Budgeted</p>
@@ -103,7 +103,7 @@ output.innerHTML = `
   <p>${consumedProtein} Protein Consumed</p>
   <span class="${proteinStatus.toLowerCase()}">${Math.abs(remainingProtein)} Protein ${proteinStatus}</span>
 `;
-  
+
   output.classList.remove('hide');
 }
 
@@ -123,7 +123,7 @@ function getCaloriesFromInputs(list) {
   }
   return calories;
 }
-function getProteinFromInput(list2){
+function getProteinFromInput(list2) {
   let protein = 0;
 
   for (const item of list2) {
